@@ -9,10 +9,27 @@
                     </div>
                     <div class="newsletter-item">
                         <div class="newsletter-form">
-                            <form class="newsletter-form input-group">
-                                <input type="email" class="form-control" placeholder="Enter Your Email" name="EMAIL">
-                                <button class="btn newsletter-btn" type="submit">Subscribe</button>
+                            <form class="newsletter-form input-group" [formGroup]="newsletterForm" #newsletter="ngForm" (ngSubmit)="newsletterSubscribe()" novalidate>
+                                <input type="email" class="form-control" placeholder="Enter Your Email" formControlName="email" required email />
+                                <button class="btn newsletter-btn" type="submit">
+                                    Subscribe
+                                </button>
                             </form>
+
+                            <div *ngIf="
+                                    newsletterForm
+                                        .get('email')
+                                        .hasError('required') &&
+                                    newsletter.submitted
+                                " class="small">
+                                Email is required
+                            </div>
+                            <div *ngIf="
+                            newsletterForm.get('email').hasError('email') &&
+                            newsletter.submitted
+                                " class="small">
+                                Please enter valid email.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -27,14 +44,15 @@
     </div>
     <div class="container">
         <div class="tagline-newsletter w-75 m-auto">
-            Trust <span>Our Clients</span> because <br> they stand behind our experience
+            Trust <span>Our Clients</span> because <br /> they stand behind our experience
         </div>
         <div class="row newsletter-below py-5 w-75 m-auto">
             <div class="col-2 m-auto">
-                <img src="assets/img/custom/pic1.jpeg" alt="" class="">
+                <img src="assets/img/custom/pic1.jpeg" alt="" class="" />
             </div>
             <div class="col-10">
-                <div class="text">Lorem ipsum dolor sit adipisicing , iusmod incididunt ut ero labore et dolore.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempot
+                <div class="text">
+                    Lorem ipsum dolor sit adipisicing , iusmod incididunt ut ero labore et dolore.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempot
                     <div>Jenifer Brown <span>CEO of SunPark</span></div>
                 </div>
             </div>
@@ -46,34 +64,33 @@
         <div class="appointment-area">
             <div class="appointment w-100">
                 <h2>Make An Appointment</h2>
-                <form action="/" class="form">
+                <form #appointment="ngForm" [formGroup]="appointmentForm" (ngSubmit)="bookAppointment()" class="form">
                     <div class="form-row">
-                        <div class="col-4">
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Name">
+                        <div class="col-md-4 col-sm-12 pt-2">
+                            <input type="text" formControlName="name" id="name" class="form-control" placeholder="Name" ngModel />
                         </div>
-                        <div class="col-4">
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Email">
+                        <div class="col-md-4 col-sm-12 pt-2">
+                            <input type="text" formControlName="email" id="name" class="form-control" placeholder="Email" ngModel />
                         </div>
-                        <div class="col-4">
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Phone">
+                        <div class="col-md-4 col-sm-12 pt-2">
+                            <input type="text" formControlName="mobile" id="name" class="form-control" placeholder="Mobile" ngModel />
                         </div>
                     </div>
                     <div class="form-row my-3">
                         <div class="col-12">
-                            <textarea name="message" id="message" class="form-control" cols="" rows="5" placeholder="Message"></textarea>
+                            <textarea name="remarks" id="remarks" class="form-control" cols="" rows="5" placeholder="Message" ngModel></textarea>
                         </div>
                     </div>
                     <div class="form-row mt-3">
                         <div class="col-12 text-right">
-                            <input type="submit" value="Submit" class="btn btn-danger">
+                            <input type="submit" value="Submit" class="btn btn-danger" />
                         </div>
                     </div>
                 </form>
             </div>
         </div>
         <div class="text-center">
-
-            <img src="assets/img/custom/logo-footer.png" alt="">
+            <img src="assets/img/custom/logo-footer.png" alt="" />
             <ul class="pt-5">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About Us</a></li>
@@ -83,24 +100,42 @@
                 <li><a href="#">Contact Us</a></li>
             </ul>
             <ul class="social-icons">
-                <li><a href="#" target="_blank"><i class="icofont-facebook"></i></a></li>
-                <li><a href="#" target="_blank"><i class="icofont-twitter"></i></a></li>
-                <li><a href="#" target="_blank"><i class="icofont-pinterest"></i></a></li>
+                <li>
+                    <a href="#" target="_blank"><i class="icofont-facebook"></i
+                    ></a>
+                </li>
+                <li>
+                    <a href="#" target="_blank"><i class="icofont-twitter"></i
+                    ></a>
+                </li>
+                <li>
+                    <a href="#" target="_blank"><i class="icofont-pinterest"></i
+                    ></a>
+                </li>
             </ul>
             <ul class="pt-1">
-                <li><a href="tel:+4048500135" target="_blank"><i class="icofont-headphone-alt"></i>Call us: (404)850-0135</a></li>
-                <li><a href="mailto:Contact@company.com" target="_blank"><i class="icofont-paper-plane"></i>Contact@company.com</a></li>
+                <li>
+                    <a href="tel:+4048500135" target="_blank"><i class="icofont-headphone-alt"></i>Call us:
+                        (404)850-0135</a
+                    >
+                </li>
+                <li>
+                    <a href="mailto:Contact@company.com" target="_blank"
+                        ><i class="icofont-paper-plane"></i
+                        >Contact@company.com</a
+                    >
+                </li>
             </ul>
-
         </div>
     </div>
-
 </footer>
 
 <div class="copyright-area">
     <div class="container">
         <div class="copyright-item">
-            <p>Copyright © 2021 <a href="#">healwithhomeopathy</a>. All Rights Reserved</p>
+            <p>
+                Copyright © 2021 <a href="#">healwithhomeopathy</a>. All Rights Reserved
+                    </p>
         </div>
     </div>
-</div>
+    </div>

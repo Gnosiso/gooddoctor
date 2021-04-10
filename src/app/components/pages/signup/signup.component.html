@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-6 pl-0">
                 <div class="signup-left">
-                    <img src="assets/img/signup-bg.jpg" alt="SignUp">
+                    <img src="assets/img/signup-bg.jpg" alt="SignUp" />
                 </div>
             </div>
 
@@ -11,37 +11,48 @@
                 <div class="signup-item">
                     <div class="signup-head">
                         <h2>Register Here</h2>
-                        <p>Already have an account? <a routerLink="/login">Log In</a></p>
+                        <p>
+                            Already have an account?
+                            <a routerLink="/login">Log In</a>
+                        </p>
                     </div>
-                    
+
                     <div class="signup-form">
-                        <form>
+                        <!-- <form #signUpForm="ngForm" (ngSubmit)="signUp(signUpForm.value)"> -->
+                        <form class="" [formGroup]="signUpForm" #signUp="ngForm" (ngSubmit)="signUpSubscribe()" novalidate>
                             <div class="row">
-                                <div class="col-lg-6">
+
+                                <div class="col-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="First Name">
+                                        <label for="" class="pr-4">I Am </label>
+                                        <input type="radio" id="doctor" formControlName="userType" value="Doctor" checked />
+                                        <label for="doctor" class="pl-1 pr-3">Doctor</label>
+
+                                        <input type="radio" id="patient" formControlName="userType" value="Patient" class="pl-3" />
+                                        <label for="patient" class="pl-1">Patient</label>
+                                        <!-- <input type="text" name="lastName" class="form-control" placeholder="Last Name"  /> -->
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6">
+                                <div class="col-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Last Name">
+                                        <input type="text" formControlName="name" class="form-control" placeholder="Full Name" />
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6">
+                                <div class="col-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Phone Number">
+                                        <input type="number" formControlName="mobile" class="form-control" placeholder="Mobile Number" />
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6">
+                                <div class="col-12">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Your Email">
+                                        <input type="email" formControlName="email" class="form-control" placeholder="Your Email" />
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6">
+                                <!-- <div class="col-lg-6">
                                     <div class="form-group">
                                         <input type="password" class="form-control" placeholder="Password">
                                     </div>
@@ -51,14 +62,17 @@
                                     <div class="form-group">
                                         <input type="password" class="form-control" placeholder="Confirm Password">
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                                            <input class="form-check-input" type="checkbox" id="gridCheck" />
                                             <label class="form-check-label" for="gridCheck">
-                                                Yes, I agree with all <a href="#">Terms & Conditions</a>
+                                                Yes, I agree with all
+                                                <a href="#"
+                                                    >Terms & Conditions</a
+                                                >
                                             </label>
                                         </div>
                                     </div>
@@ -66,7 +80,9 @@
 
                                 <div class="col-lg-12">
                                     <div class="text-center">
-                                        <button type="submit" class="btn signup-btn">Sign Up</button>
+                                        <button type="submit" class="btn signup-btn">
+                                            Sign Up
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -83,21 +99,34 @@
         <div class="section-title">
             <h2>Our Latest Blogs</h2>
         </div>
-        
+
         <div class="row">
             <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".3s">
                 <div class="blog-item">
                     <div class="blog-top">
-                        <a routerLink="/blog-details"><img src="assets/img/home-one/home-bg11.jpg" alt="Blog"></a>
+                        <a routerLink="/blog-details"><img src="assets/img/home-one/home-bg11.jpg" alt="Blog" /></a>
                     </div>
 
                     <div class="blog-bottom">
-                        <h3><a routerLink="/blog-details">In this hospital there are special surgeon.</a></h3>
-                        <p>Lorem ipsum is  dolor sit amet, csectetur adipiscing elit, dolore smod tempor incididunt ut labore et....</p>
+                        <h3>
+                            <a routerLink="/blog-details">In this hospital there are special surgeon.</a
+                            >
+                        </h3>
+                        <p>
+                            Lorem ipsum is dolor sit amet, csectetur adipiscing
+                            elit, dolore smod tempor incididunt ut labore et....
+                        </p>
                         <ul>
-                            <li><a routerLink="/blog-details">Read More <i class="icofont-long-arrow-right"></i></a></li>
-                            <li><i class="icofont-calendar"></i> Jan 03, 2020</li>
-                        </ul>
+                            <li>
+                                <a routerLink="/blog-details"
+                                    >Read More
+                                    <i class="icofont-long-arrow-right"></i
+                                ></a>
+                            </li>
+                            <li>
+                                <i class="icofont-calendar"></i> Jan 03, 2020
+                            </li>
+                            </ul>
                     </div>
                 </div>
             </div>
@@ -105,16 +134,29 @@
             <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".5s">
                 <div class="blog-item">
                     <div class="blog-top">
-                        <a routerLink="/blog-details"><img src="assets/img/home-one/home-bg12.jpg" alt="Blog"></a>
+                        <a routerLink="/blog-details"><img src="assets/img/home-one/home-bg12.jpg" alt="Blog" /></a>
                     </div>
 
                     <div class="blog-bottom">
-                        <h3><a routerLink="/blog-details">World AIDS Day, designated on 1 December.</a></h3>
-                        <p>Lorem ipsum is  dolor sit amet, csectetur adipiscing elit, dolore smod tempor incididunt ut labore et....</p>
+                        <h3>
+                            <a routerLink="/blog-details">World AIDS Day, designated on 1 December.</a
+                            >
+                        </h3>
+                        <p>
+                            Lorem ipsum is dolor sit amet, csectetur adipiscing
+                            elit, dolore smod tempor incididunt ut labore et....
+                        </p>
                         <ul>
-                            <li><a routerLink="/blog-details">Read More <i class="icofont-long-arrow-right"></i></a></li>
-                            <li><i class="icofont-calendar"></i> Jan 03, 2020</li>
-                        </ul>
+                            <li>
+                                <a routerLink="/blog-details"
+                                    >Read More
+                                    <i class="icofont-long-arrow-right"></i
+                                ></a>
+                            </li>
+                            <li>
+                                <i class="icofont-calendar"></i> Jan 03, 2020
+                            </li>
+                            </ul>
                     </div>
                 </div>
             </div>
@@ -122,16 +164,30 @@
             <div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4 wow fadeInUp" data-wow-delay=".7s">
                 <div class="blog-item">
                     <div class="blog-top">
-                        <a routerLink="/blog-details"><img src="assets/img/home-one/home-bg13.jpg" alt="Blog"></a>
+                        <a routerLink="/blog-details"><img src="assets/img/home-one/home-bg13.jpg" alt="Blog" /></a>
                     </div>
 
                     <div class="blog-bottom">
-                        <h3><a routerLink="/blog-details">More than 80 clinical trials launch to test coronavirus.</a></h3>
-                        <p>Lorem ipsum is  dolor sit amet, csectetur adipiscing elit, dolore smod tempor incididunt ut labore et....</p>
+                        <h3>
+                            <a routerLink="/blog-details">More than 80 clinical trials launch to test
+                                coronavirus.</a
+                            >
+                        </h3>
+                        <p>
+                            Lorem ipsum is dolor sit amet, csectetur adipiscing
+                            elit, dolore smod tempor incididunt ut labore et....
+                        </p>
                         <ul>
-                            <li><a routerLink="/blog-details">Read More <i class="icofont-long-arrow-right"></i></a></li>
-                            <li><i class="icofont-calendar"></i> Jan 03, 2020</li>
-                        </ul>
+                            <li>
+                                <a routerLink="/blog-details"
+                                    >Read More
+                                    <i class="icofont-long-arrow-right"></i
+                                ></a>
+                            </li>
+                            <li>
+                                <i class="icofont-calendar"></i> Jan 03, 2020
+                            </li>
+                            </ul>
                     </div>
                 </div>
             </div>

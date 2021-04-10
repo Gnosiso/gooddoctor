@@ -1,5 +1,10 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { FlashMessagesModule } from 'angular2-flash-messages';
+// import { FlashMessagesModule } from 'flash-messages-angular';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +32,10 @@ import { BlogComponent } from './components/pages/blog/blog.component';
 import { BlogDetailsComponent } from './components/pages/blog-details/blog-details.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { ComingSoonComponent } from './components/pages/coming-soon/coming-soon.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SimpleNotificationsModule } from 'angular2-notifications';
+
 
 @NgModule({
   declarations: [
@@ -54,10 +63,25 @@ import { ComingSoonComponent } from './components/pages/coming-soon/coming-soon.
     BlogComponent,
     BlogDetailsComponent,
     ContactComponent,
-    ComingSoonComponent
+    ComingSoonComponent,
+    DashboardComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    // FlashMessagesModule.forRoot(),
+    SimpleNotificationsModule.forRoot({
+        position:['bottom', 'right'],
+        timeOut: 3000,
+        // animate: 'fade',
+        showProgressBar: true,
+        pauseOnHover: true,
+        clickToClose: true
+      }),
+    BrowserAnimationsModule,
     AppRoutingModule
   ],
   providers: [],

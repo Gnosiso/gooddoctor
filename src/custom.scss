@@ -4,81 +4,81 @@
         .maroon {
             color: $maroon;
         }
-
+        
         .green {
             color: $green;
         }
-
+        
         p {
             color: #717171!important;
         }
-
+        
         .aMaroon {
             color: $maroon!important;
         }
-
+        
         .aGreen {
             color: $green!important;
         }
-
+        
         .aBlack {
             color: #000!important;
             i {
                 color: $maroon!important;
             }
         }
-
+        
         a:hover {
             color: $green!important;
         }
-
+        
         .underline {
             text-decoration: underline;
         }
-
+        
         .icon-readmore {
             font-size: 1.3rem!important;
             position: relative;
             top: 2px;
             color: $maroon!important;
         }
-
+        
         .btn-danger {
             color: #fff;
             background-color: $maroon;
             border-color: $maroon;
         }
-
+        
         .btn-custom {
             font-size: .7rem!important;
             font-weight: 600!important;
             padding: .7rem 1.2rem!important;
         }
-
+        
         // ----------------------------------------------------common end
         // ----------------------------------------------------header
         .header-top-item .header-top-right ul li a {
             background-color: $green;
             border-radius: 50%;
         }
-
+        
         .navbar-brand {
             img {
                 width: 120px;
             }
         }
-
+        
         .main-nav nav .navbar-nav .nav-item a {
             color: #000;
             text-transform: uppercase;
             font-size: .8rem;
         }
-
+        
         .main-nav nav .navbar-nav .nav-item a:hover,
         .aBlack:hover {
             color: $green;
         }
-
+        
         // ----------------------------------------------------header end
         // ----------------------------------------------------banner
         .slider-item {
@@ -89,11 +89,11 @@
                 color: #ffffff!important;
             }
         }
-
+        
         .slider-item-img {
             background-image: url(assets/img/custom/banner-bg.png);
         }
-
+        
         .counter-item {
             h3 {
                 color: #000;
@@ -105,7 +105,7 @@
                 color: $green!important;
             }
         }
-
+        
         // ----------------------------------------------------banner end
         // ----------------------------------------------------about doctor
         .about-left {
@@ -115,7 +115,7 @@
                 background-color: $green;
             }
         }
-
+        
         .about-item {
             a {
                 background-color: $maroon;
@@ -127,11 +127,11 @@
                 color: $green!important;
             }
         }
-
+        
         .section-title h2:before {
             background-color: $green;
         }
-
+        
         // ----------------------------------------------------about doctor end
         // ----------------------------------------------------services
         .service-item {
@@ -158,7 +158,7 @@
                 }
             }
         }
-
+        
         .service-item:hover {
             box-shadow: 0px 0px 25px 0px rgb(165, 162, 162)!important;
             .service-front {
@@ -177,7 +177,7 @@
                 }
             }
         }
-
+        
         // ----------------------------------------------------services end
         // ----------------------------------------------------expertise
         .expertise-item .expertise-inner {
@@ -195,14 +195,14 @@
                 color: #ffffff!important;
             }
         }
-
+        
         .expertise-item .expertise-right {
             &:before,
             &:after {
                 background-color: $green;
             }
         }
-
+        
         // ----------------------------------------------------expertise emd
         // ----------------------------------------------------video
         .video-area {
@@ -215,7 +215,7 @@
                 opacity: .2;
             }
         }
-
+        
         // ----------------------------------------------------video end
         // ----------------------------------------------------blog
         .blog-item {
@@ -241,7 +241,7 @@
                 }
             }
         }
-
+        
         // ----------------------------------------------------blog end
         // ----------------------------------------------------newsletter
         .bg-newsletter {
@@ -289,7 +289,7 @@
                 }
             }
         }
-
+        
         .newsletter-wrap {
             background-image: url('assets/img/custom/bg-newsletter.png');
             p {
@@ -334,7 +334,7 @@
                 }
             }
         }
-
+        
         // ----------------------------------------------------newsletter end
         // ----------------------------------------------------footer
         footer {
@@ -389,7 +389,7 @@
                 }
             }
         }
-
+        
         .copyright-area {
             background-color: #023731!important;
             border-top: 1px solid;
@@ -402,17 +402,17 @@
                 }
             }
         }
-
+        
         // ----------------------------------------------------footer end
         // ----------------------------------------------------page
         .page-title-area:before {
             background-color: $green;
         }
-
+        
         .page-title-five {
             background-image: url(assets/img/custom/banner-bg.png);
         }
-
+        
         .location-wrap .location-item {
             i {
                 background-color: $green;
@@ -422,7 +422,7 @@
                 color: #000000!important;
             }
         }
-
+        
         #contactForm {
             textarea,
             input[type="text"] {
@@ -442,7 +442,7 @@
                 color: $green;
             }
         }
-
+        
         .speciality-right {
             background-image: url("assets/img/custom/doctor.jpg");
             background-color: #000;
@@ -450,5 +450,24 @@
                 color: #fff!important;
             }
         }
-
+        
         // ----------------------------------------------------page end
+        // ----------------------------------------------------flash message
+        #grayOutDiv {
+            background-color: #333;
+            opacity: 0.7;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            z-index: 9999;
+        }
+        
+        .flash-message {
+            z-index: 10000;
+            position: relative;
+        }
+        
+        // ----------------------------------------------------flash message end

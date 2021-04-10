@@ -1,3 +1,4 @@
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeOneComponent } from './components/pages/home-one/home-one.component';
@@ -45,6 +46,9 @@ const routes: Routes = [
     {path: 'blog-details', component: BlogDetailsComponent},
     {path: 'contact', component: ContactComponent},
     // Here add new pages component
+
+    // admin urls
+    {path: 'admin', component: DashboardComponent},
 
     {path: '**', component: ErrorComponent} // This line will remain down from the whole pages component list
 ];
